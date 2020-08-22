@@ -88,28 +88,19 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  
-
-
-  # foods.each do |food|
-  #   case food
-  #   when "うに", "うにぎり", "うに軍艦", "うに丼"
-  #      puts "#{food}:大好きです"
-  #   else
-  #     puts "#{food}:まぁまぁ好きです"
-  #   end
-  # end
+  foods.each do |food|
+    puts food.include?("うに") ? "#{food}:好物です" : "#{food}:まぁまぁ好きです"
+  end
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports = sports.uniq
-  puts sports
-  # sports.each.with_index(1) do |sport, i|
-  #   puts "NO#{i}#{sport}"
-  # end
+  
+  sports.flatten.uniq.each.with_index(1) do |sport, i|
+    puts "NO#{i}#{sport}"
+  end
 
 end
 
@@ -134,9 +125,7 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  data.each do |data|
-    p data
-  end
+  p array = data.keys
 end
 
 def q15
@@ -144,7 +133,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  # if( data1.include?("age")) 
+  puts data1.key?(:age) ? "OK" : "NG"
+  puts data2.key?(:age) ? "OK" : "NG"
     
 end
 
