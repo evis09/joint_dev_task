@@ -182,16 +182,17 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  attr_accessor :name, :age
-
   def initialize(name:, age:)
     @name = name
     @age = age
   end
 
   def introduce
-    puts "こんにちは、#{user1[@name]}と申します。宜しくお願いいたします。"
-    puts "はいさまいど~、#{user2[@name]}です！！！"
+    if @age == 10
+      puts "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+    else
+      puts "はいさいまいど〜，#{@name}です！！！"
+    end
   end
 end
 
@@ -241,6 +242,10 @@ class Zoo
     @childrem = children
     @about = about
     @sinior = sinior
+  end
+
+  def info_entry_fee
+    return "#{@name}さんの入場料は"
   end
 
   
