@@ -232,22 +232,31 @@ class UserQ20
     @name = name
     @age = age
   end
+
 end
 
 class Zoo
   # 以下に回答を記載
-  attr_accessor :infant, :children, :about, :sinior
-  def initialize(infant, children, about, sinior)
+  attr_accessor :entry_fee, :infant, :children, :adult, :senior
+  def initialize(entry_fee, infant, children, abult, senior)
+    @entry_fee = entry_fee
     @infant = infant
-    @childrem = children
-    @about = about
-    @sinior = sinior
+    @children = children
+    @abult = abult
+    @senior = senior
   end
-
+  
   def info_entry_fee
-    return "#{@name}さんの入場料は"
+    if age < 5
+      return "#{@name}さんの入場料は #{@infant}円です。"
+    elsif age >= 6 && age < 12
+      return "#{@name}さんの入場料は #{@children}円です。"
+    elsif age >= 13 && age < 64
+      return "#{@name}さんの入場料は #{@adult}円です。"
+    elsif age >= 65 && age < 120
+      return "#{@name}さんの入場料は #{@senior}円です。"
+    end
   end
-
   
 end
 
