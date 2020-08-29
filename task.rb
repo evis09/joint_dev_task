@@ -227,7 +227,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  attr_accessor :users
+  attr_reader :users
   def initialize(users)
     @name = users[:name]
     @age = users[:age]
@@ -248,10 +248,19 @@ class Zoo
 
   def info_entry_fee(user)
     case @age
-    when 0..5
-
+    when  0..5
+      @info_entry_fee = @infant
+    when 6..12
+      @info_entry_fee = @children
+    when 13..64
+      @info_entry_fee = @adult
+    when 65..120
+      @info_entry_fee = @senior
     end
+    puts "#{@name}さんの入場料金は#{@info_entry_fee}円です。"
   end
+
+  
   
   
   
