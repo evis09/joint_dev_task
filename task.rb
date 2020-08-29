@@ -227,36 +227,33 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  attr_accessor :name, :age
-  def initialize(name, age)
-    @name = name
-    @age = age
+  attr_accessor :users
+  def initialize(users)
+    @name = users[:name]
+    @age = users[:age]
   end
 
 end
 
 class Zoo
   # 以下に回答を記載
-  attr_accessor :entry_fee, :infant, :children, :adult, :senior
-  def initialize(entry_fee, infant, children, abult, senior)
-    @entry_fee = entry_fee
-    @infant = infant
-    @children = children
-    @abult = abult
-    @senior = senior
+  def initialize(zoo)
+    @zoo_name = zoo[:neme]
+    @entry_fee = zoo[:entry_fee]
+    @infant = zoo[:infant]
+    @children = zoo[:children]
+    @adult = zoo[:adult]
+    @senior = zoo[:senior]
   end
-  
-  def info_entry_fee
-    if age < 5
-      return "#{@name}さんの入場料は #{@infant}円です。"
-    elsif age >= 6 && age < 12
-      return "#{@name}さんの入場料は #{@children}円です。"
-    elsif age >= 13 && age < 64
-      return "#{@name}さんの入場料は #{@adult}円です。"
-    elsif age >= 65 && age < 120
-      return "#{@name}さんの入場料は #{@senior}円です。"
+
+  def info_entry_fee(user)
+    case @age
+    when 0..5
+
     end
   end
+  
+  
   
 end
 
